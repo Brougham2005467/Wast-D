@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wast'D</title>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"/>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+    crossorigin="anonymous"></script>
+    <script src="./scripts/cocktailsdb.js"></script>
+    
+    
+
+
+</head>
+<body>
+    <!--Initialise Ionic application-->
+    <ion-app>
+        <ion-tabs id="tb-wastd">
+
+            <!--Search Page Tab-->
+            <ion-tab tab="search">
+                
+                <ion-header>
+                    <ion-toolbar color="primary">
+                        <ion-title>Search</ion-title>
+                    </ion-toolbar>
+                </ion-header>
+                <ion-content fullscreen class="ion-padding">
+                    <h1></h1>
+                    <ion-item>
+                            <input id="searchbox" placeholder="Search for a cocktail" ></input>
+                            <ion-button id="searchbutton">Search</ion-button>
+                            <script src="./scripts/search.js"></script>
+                    </ion-item>
+                        <ion-list id="searchresults">
+                        </ion-list>
+                    </ion-item>
+                    <ion-label id="lbl-search"></ion-label>
+                </ion-content>
+            </ion-tab>
+
+            <!--Ingredients Page Tab-->
+            
+            <ion-tab tab="ingredients">
+                
+                <ion-header>
+                    <ion-toolbar color="primary">
+                        <ion-title>Ingredients</ion-title>
+                    </ion-toolbar>
+                </ion-header>
+                <ion-content fullscreen class="ion-padding">
+                    <script src="./scripts/ingredients.js"></script>
+
+                    <ion-button id="ingred-menu-button" expand="block">Filter</ion-button>
+                <ion-popover trigger="ingred-menu-button">
+                    <ion-content>
+                        <ion-item><ion-label>Browse by Name</ion-label></ion-item>
+                            <ion-item>
+                              <button class="filter-button" value="search.php?i=A">A</button>
+                              <button class="filter-button" value="search.php?i=B">B</button>
+                              <button class="filter-button" value="search.php?i=C">C</button>
+                              <button class="filter-button" value="search.php?i=D">D</button>
+                              <button class="filter-button" value="search.php?i=E">E</button>
+                              <button class="filter-button" value="search.php?i=F">F</button>
+                              </ion-item><ion-item>
+                              <button class="filter-button" value="search.php?i=G">G</button> 
+                              <button class="filter-button" value="search.php?i=H">H</button>
+                              <button class="filter-button" value="search.php?i=I">I</button>
+                              <button class="filter-button" value="search.php?i=J">J</button>
+                              <button class="filter-button" value="search.php?i=K">K</button>
+                              <button class="filter-button" value="search.php?i=L">L</button>
+                              </ion-item><ion-item>
+                              <button class="filter-button" value="search.php?i=M">M</button>
+                              <button class="filter-button" value="search.php?i=N">N</button> 
+                              <button class="filter-button" value="search.php?i=O">O</button>
+                              <button class="filter-button" value="search.php?i=P">P</button>
+                              <button class="filter-button" value="search.php?i=Q">Q</button>
+                              <button class="filter-button" value="search.php?i=R">R</button>
+                              </ion-item><ion-item>
+                              <button class="filter-button" value="search.php?i=S">S</button>
+                              <button class="filter-button" value="search.php?i=T">T</button>
+                              <button class="filter-button" value="search.php?i=U">U</button> 
+                              <button class="filter-button" value="search.php?i=V">V</button>
+                              <button class="filter-button" value="search.php?i=W">W</button>
+                              <button class="filter-button" value="search.php?i=X">X</button>
+                              </ion-item><ion-item>
+                              <button class="filter-button" value="search.php?i=Y">Y</button>
+                              <button class="filter-button" value="search.php?i=Z">Z</button>
+                              </ion-item>
+                </ion-content>
+                    
+                </ion-popover>
+                   
+                        <!--Ingredients list-->
+                        <ion-list id="ingredientsList">
+                        </ion-list>
+
+                    <ion-label id="lbl-ingredients"></ion-label>
+                </ion-content>
+            </ion-tab>
+
+            <!--Cocktail Browser Page Tab-->
+
+            <ion-tab tab="browse">
+                <ion-header>
+                    <ion-toolbar color="primary">
+                        <ion-title>Browse Cocktails</ion-title>
+                    </ion-toolbar>
+                </ion-header>
+                <ion-content fullscreen class="ion-padding">
+                    
+
+                <ion-button id="cocktail-menu-button" expand="block">Filter</ion-button>
+                <ion-popover trigger="cocktail-menu-button">
+                    <ion-content>
+                        <ion-item><ion-label>Browse by Name</ion-label></ion-item>
+                            <ion-item>
+                              <button class="filter-button" value="search.php?f=A">A</button>
+                              <button class="filter-button" value="search.php?f=B">B</button>
+                              <button class="filter-button" value="search.php?f=C">C</button>
+                              <button class="filter-button" value="search.php?f=D">D</button>
+                              <button class="filter-button" value="search.php?f=E">E</button>
+                              <button class="filter-button" value="search.php?f=F">F</button>
+                              </ion-item><ion-item>
+                              <button class="filter-button" value="search.php?f=G">G</button> 
+                              <button class="filter-button" value="search.php?f=H">H</button>
+                              <button class="filter-button" value="search.php?f=I">I</button>
+                              <button class="filter-button" value="search.php?f=J">J</button>
+                              <button class="filter-button" value="search.php?f=K">K</button>
+                              <button class="filter-button" value="search.php?f=L">L</button>
+                              </ion-item><ion-item>
+                              <button class="filter-button" value="search.php?f=M">M</button>
+                              <button class="filter-button" value="search.php?f=N">N</button> 
+                              <button class="filter-button" value="search.php?f=O">O</button>
+                              <button class="filter-button" value="search.php?f=P">P</button>
+                              <button class="filter-button" value="search.php?f=Q">Q</button>
+                              <button class="filter-button" value="search.php?f=R">R</button>
+                              </ion-item><ion-item>
+                              <button class="filter-button" value="search.php?f=S">S</button>
+                              <button class="filter-button" value="search.php?f=T">T</button>
+                              <button class="filter-button" value="search.php?f=U">U</button> 
+                              <button class="filter-button" value="search.php?f=V">V</button>
+                              <button class="filter-button" value="search.php?f=W">W</button>
+                              <button class="filter-button" value="search.php?f=X">X</button>
+                              </ion-item><ion-item>
+                              <button class="filter-button" value="search.php?f=Y">Y</button>
+                              <button class="filter-button" value="search.php?f=Z">Z</button>
+                              </ion-item>
+                </ion-content>
+                    
+                </ion-popover>
+                    
+                        <!--List of Cocktails populated from API-->
+                <ion-list id="browseDrinkList">
+                    <a>
+
+                    </a>
+                </ion-list>
+    
+
+                    <ion-label id="lbl-browse"></ion-label>
+                </ion-content>
+            </ion-tab>
+
+            <!--Favourites Page Tab-->
+            <ion-tab tab="favourites">
+                
+                <ion-header>
+                    <ion-toolbar color="primary">
+                        <ion-title>Favourites</ion-title>
+                    </ion-toolbar>
+                </ion-header>
+                <ion-content fullscreen class="ion-padding">
+                    <ion-content>
+                <!--Refresh Button and Clear All Button-->
+                <ion-button id="fave-refresh-button" expand="block">Refresh</ion-button>
+                <ion-button id="fave-clear-button" expand="block">Clear List</ion-button>
+            <ion-content>
+
+
+                <!--Favourites list with action buttons to remove-->
+                    <ion-list id="favouritesList">
+                    </ion-list>
+
+
+                    <ion-label id="lbl-favourites"></ion-label>
+                </ion-content>
+            </ion-tab>
+
+            <!--Shopping List Page Tab-->
+            
+            <ion-tab tab="shoplist">
+                
+                <ion-header>
+                    <ion-toolbar color="primary">
+                        <ion-title>Shopping List</ion-title>
+                    </ion-toolbar>
+                </ion-header>
+                <ion-content fullscreen class="ion-padding">
+                    <ion-content>
+                <!--Refresh Button and Clear All Button-->
+                <ion-button id="shoplist-refresh-button" expand="block">Refresh</ion-button>
+                <ion-button id="shoplist-clear-button" expand="block">Clear List</ion-button>
+            <ion-content>
+                   
+                        <!--Ingredients list-->
+                        <ion-list id="shoppingList">
+                        </ion-list>
+
+                    <ion-label id="lbl-shoplist"></ion-label>
+                </ion-content>
+            </ion-tab>
+
+
+<!--Navigation Tabs with icons-->
+            <ion-tab-bar slot="bottom">
+                <ion-tab-button tab="search">
+                    <ion-icon name="search"></ion-icon>
+                    <ion-label>Search</ion-label>
+                </ion-tab-button>
+                <ion-tab-button tab="ingredients">
+                    <ion-icon name="pint"></ion-icon>
+                    <ion-label>Ingredients</ion-label>
+                </ion-tab-button>  
+                <ion-tab-button tab="browse">
+                    <ion-icon name="wine"></ion-icon>
+                    <ion-label>Browse</ion-label>
+                </ion-tab-button>    
+                <ion-tab-button tab="favourites">
+                    <ion-icon name="heart"></ion-icon>
+                    <ion-label>Favourites</ion-label>
+                </ion-tab-button>
+                <ion-tab-button tab="shoplist">
+                    <ion-icon name="basket"></ion-icon>
+                    <ion-label>Shopping List</ion-label>
+                </ion-tab-button>
+            </ion-tab-bar>
+        </ion-tabs>
+         
+    </ion-app>
+   
+</body>
+</html>
