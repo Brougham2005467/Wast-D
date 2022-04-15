@@ -83,7 +83,6 @@ function searchInput(input){
      <ion-content fullscreen class="ion-padding">\
      <img src="' + data.drinks[i].strDrinkThumb + '">\
      <p><b>' + ingredsfull + '</b></p>\
-     <ion-button id="addtoingredlist">Add to Ingredients List</ion-button>\
      <p>' + data.drinks[i].strInstructions + '</p>\
    </ion-content>\
    </div>\
