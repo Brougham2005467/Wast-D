@@ -77,7 +77,7 @@ function searchInput(input){
      <ion-header>\
                     <ion-toolbar color="primary">\
                         <ion-title>' + data.drinks[i].strDrink + '</ion-title>\
-                        <ion-button slot="end" color="danger" href="./index2.html" id="close">Back</ion-button>\
+                        <ion-button slot="end" color="danger" href="./index.html" id="close">Back</ion-button>\
                     </ion-toolbar>\
                 </ion-header>\
      <ion-content fullscreen class="ion-padding">\
